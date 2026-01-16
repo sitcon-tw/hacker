@@ -20,9 +20,6 @@ jobs:
         with:
           node-version: 22
 
-      - name: Install dependencies
-        run: npm install prettier
-
       - name: Run Prettier
 
-        run: prettier --check .
+        run: npx prettier --check .
