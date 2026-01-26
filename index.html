@@ -1,230 +1,234 @@
 <!doctype html>
 <html lang="zh-Hant">
-	<head>
-		<meta charset="utf-8" />
-		<title>SITCON 漏洞披露政策</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<style>
-			@import url("https://font.emtech.cc/css/GenSekiGothicTW");
 
-			:root {
-				--bg: #0f0f0f;
-				--fg: #eaeaea;
-				--muted: #9a9a9a;
-				--border: #2a2a2a;
-				--accent: #ffffff;
-				--blue: #1e90ff;
-			}
+<head>
+	<meta charset="utf-8" />
+	<title>SITCON 漏洞披露政策</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<style>
+		@import url("https://font.emtech.cc/css/GenSekiGothicTW");
 
-			* {
-				box-sizing: border-box;
-			}
+		:root {
+			--bg: #0f0f0f;
+			--fg: #eaeaea;
+			--muted: #9a9a9a;
+			--border: #2a2a2a;
+			--accent: #ffffff;
+			--blue: #1e90ff;
+		}
 
-			body {
-				margin: 0;
-				font-family: "GenSekiGothicTW", sans-serif;
-				background: var(--bg);
-				color: var(--fg);
-				line-height: 1.7;
-			}
+		* {
+			box-sizing: border-box;
+		}
 
-			main {
-				max-width: 960px;
-				margin: 0 auto;
-				padding: 64px 24px 96px;
-			}
+		body {
+			margin: 0;
+			font-family: "GenSekiGothicTW", sans-serif;
+			background: var(--bg);
+			color: var(--fg);
+			line-height: 1.7;
+		}
 
-			h1,
-			h2,
-			h3 {
-				line-height: 1.3;
-				margin-top: 2.5em;
-				margin-bottom: 0.5em;
-			}
+		main {
+			max-width: 960px;
+			margin: 0 auto;
+			padding: 64px 24px 96px;
+		}
 
-			h1 {
-				font-size: 2.5rem;
-				margin-top: 0;
-			}
+		h1,
+		h2,
+		h3 {
+			line-height: 1.3;
+			margin-top: 2.5em;
+			margin-bottom: 0.5em;
+		}
 
-			h2 {
-				font-size: 1.6rem;
-				border-bottom: 1px solid var(--border);
-				padding-bottom: 0.4em;
-			}
+		h1 {
+			font-size: 2.5rem;
+			margin-top: 0;
+		}
 
-			h3 {
-				font-size: 1.3rem;
-				margin-bottom: 1rem;
-			}
+		h2 {
+			font-size: 1.6rem;
+			border-bottom: 1px solid var(--border);
+			padding-bottom: 0.4em;
+		}
 
-			p {
-				margin: 0.5em 0 1em;
-				color: var(--fg);
-			}
+		h3 {
+			font-size: 1.3rem;
+			margin-bottom: 1rem;
+		}
 
-			.muted {
-				color: var(--muted);
-			}
+		p {
+			margin: 0.5em 0 1em;
+			color: var(--fg);
+		}
 
-			.intro {
-				margin-bottom: 3em;
-			}
+		.muted {
+			color: var(--muted);
+		}
 
-			.hackers {
-				width: 100%;
-				border-collapse: collapse;
-				font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-				font-size: 0.9rem;
-			}
+		.intro {
+			margin-bottom: 3em;
+		}
 
-			.hackers th,
-			.hackers td {
-				padding: 8px 10px;
-				border-bottom: 1px solid var(--border);
-				vertical-align: top;
-			}
+		.hackers {
+			width: 100%;
+			border-collapse: collapse;
+			font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+			font-size: 0.9rem;
+		}
 
-			.hackers th {
-				text-align: left;
-				color: var(--muted);
-				font-weight: 500;
-			}
+		.hackers th,
+		.hackers td {
+			padding: 8px 10px;
+			border-bottom: 1px solid var(--border);
+			vertical-align: top;
+		}
 
-			.hackers tr:hover td {
-				background: rgba(255, 255, 255, 0.03);
-			}
+		.hackers th {
+			text-align: left;
+			color: var(--muted);
+			font-weight: 500;
+		}
 
-			ul {
-				padding-left: 1.2em;
-			}
+		.hackers tr:hover td {
+			background: rgba(255, 255, 255, 0.03);
+		}
 
-			li {
-				margin-bottom: 0.6em;
-			}
+		ul {
+			padding-left: 1.2em;
+		}
 
-			.box {
-				border: 1px solid var(--border);
-				padding: 20px 24px;
-				margin: 1.5em 0;
-				background: #141414;
-			}
+		li {
+			margin-bottom: 0.6em;
+		}
 
-			footer {
-				margin-top: 5em;
-				padding-top: 2em;
-				border-top: 1px solid var(--border);
-				color: var(--muted);
-				font-size: 0.85rem;
-			}
+		.box {
+			border: 1px solid var(--border);
+			padding: 20px 24px;
+			margin: 1.5em 0;
+			background: #141414;
+		}
 
-			code {
-				font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-				background: #1c1c1c;
-				padding: 2px 6px;
-				border-radius: 4px;
-				font-size: 0.9em;
-			}
+		footer {
+			margin-top: 5em;
+			padding-top: 2em;
+			border-top: 1px solid var(--border);
+			color: var(--muted);
+			font-size: 0.85rem;
+		}
 
-			a {
-				color: var(--blue);
-				text-decoration: none;
-			}
+		code {
+			font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+			background: #1c1c1c;
+			padding: 2px 6px;
+			border-radius: 4px;
+			font-size: 0.9em;
+		}
 
-			a:hover {
-				text-decoration: underline;
-			}
+		a {
+			color: var(--blue);
+			text-decoration: none;
+		}
 
-			.logo {
-				display: block;
-				position: fixed;
-				right: 0;
-				bottom: 0;
-				width: 50vh;
-				filter: opacity(0.05);
-				z-index: -1;
-			}
-		</style>
-	</head>
+		a:hover {
+			text-decoration: underline;
+		}
 
-	<body>
-		<img src="sitcon.svg" alt="SITCON Logo" class="logo" />
-		<main>
-			<section class="intro">
-				<h1>好駭客</h1>
-				<p>謝謝這些駭客大大們維護 SITCON 的世界和平 (｀･ω･´)ゞ</p>
-			</section>
+		.logo {
+			display: block;
+			position: fixed;
+			right: 0;
+			bottom: 0;
+			width: 50vh;
+			filter: opacity(0.05);
+			z-index: -1;
+		}
+	</style>
+</head>
 
-			<h2>Hall of Fame</h2>
-			<table class="hackers">
-				<thead>
-					<tr>
-						<th>日期</th>
-						<th>回報者</th>
-						<th>漏洞類型</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>2026/01/00</td>
-						<td></td>
-						<td></td>
-					</tr>
-				</tbody>
-			</table>
+<body>
+	<img src="sitcon.svg" alt="SITCON Logo" class="logo" />
+	<main>
+		<section class="intro">
+			<h1>好駭客</h1>
+			<p>謝謝這些駭客大大們維護 SITCON 的世界和平 (｀･ω･´)ゞ</p>
+		</section>
 
-			<h2>漏洞披露政策</h2>
-			<div class="box">
-				<p>如果您發現 SITCON 系統上的安全漏洞，請立即通知我們，我們會根據您回報內容進行調查，並儘快修正問題。</p>
-			</div>
+		<h2>Hall of Fame</h2>
+		<table class="hackers">
+			<thead>
+				<tr>
+					<th>日期</th>
+					<th>回報者</th>
+					<th>系統</th>
+					<th>漏洞類型</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>2026/01/21</td>
+					<td>en stev</td>
+					<td>SITCONTIX</td>
+					<td>Open Redirect</td>
+				</tr>
+			</tbody>
+		</table>
 
-			<h3>找漏洞的好地方</h3>
+		<h2>漏洞披露政策</h2>
+		<div class="box">
+			<p>如果您發現 SITCON 系統上的安全漏洞，請立即通知我們，我們會根據您回報內容進行調查，並儘快修正問題。</p>
+		</div>
 
-			<p>
-				以下是一些 SITCON 目前維護中的專案。更多專案請參考
-				<a href="https://github.com/sitcon-tw">GitHub 頁面</a>
-				。
-			</p>
+		<h3>找漏洞的好地方</h3>
 
+		<p>
+			以下是一些 SITCON 目前維護中的專案。更多專案請參考
+			<a href="https://github.com/sitcon-tw">GitHub 頁面</a>
+			。
+		</p>
+
+		<ul>
+			<li>年會官網：https://github.com/sitcon-tw/20xx（GitHub Pages 靜態網頁）</li>
+			<li>徵稿網站：https://github.com/sitcon-tw/20xx-cfp</li>
+			<li>SITCON Camp 網站：https://github.com/sitcon-tw/camp20xx</li>
+			<li>大地遊戲：https://github.com/sitcon-tw/20xx-game</li>
+			<li>
+				報名系統：
+				<a href="https://github.com/sitcon-tw/tickets/">https://github.com/sitcon-tw/tickets</a>
+			</li>
+		</ul>
+
+		<h3>漏洞披露責任政策</h3>
+		<ul>
+			<li>請容許我們有足夠的時間調查與解決問題，再行公佈相關資訊。</li>
+			<li>未經帳號持有人同意，請勿與該帳號互動或存取其資料。</li>
+			<li>請秉持善意，避免侵犯他人隱私或影響服務穩定。</li>
+			<li>不得利用漏洞為自己謀利。</li>
+			<li>請勿違反任何適用法律或法規。</li>
+			<li>您無權存取任何用戶資料。</li>
+		</ul>
+
+		<h3>回報方式</h3>
+		<div class="box">
+			<p>請依以下格式寄送至：</p>
+			<p><code>sitcon-dev@googlegroups.com</code></p>
 			<ul>
-				<li>年會官網：https://github.com/sitcon-tw/20xx（GitHub Pages 靜態網頁）</li>
-				<li>徵稿網站：https://github.com/sitcon-tw/20xx-cfp</li>
-				<li>SITCON Camp 網站：https://github.com/sitcon-tw/camp20xx</li>
-				<li>大地遊戲：https://github.com/sitcon-tw/20xx-game</li>
-				<li>
-					報名系統：
-					<a href="https://github.com/sitcon-tw/tickets/">https://github.com/sitcon-tw/tickets</a>
-				</li>
+				<li>聯絡方式</li>
+				<li>標題</li>
+				<li>敘述</li>
+				<li>重製步驟</li>
+				<li>附件</li>
+				<li>備註</li>
 			</ul>
+		</div>
 
-			<h3>漏洞披露責任政策</h3>
-			<ul>
-				<li>請容許我們有足夠的時間調查與解決問題，再行公佈相關資訊。</li>
-				<li>未經帳號持有人同意，請勿與該帳號互動或存取其資料。</li>
-				<li>請秉持善意，避免侵犯他人隱私或影響服務穩定。</li>
-				<li>不得利用漏洞為自己謀利。</li>
-				<li>請勿違反任何適用法律或法規。</li>
-				<li>您無權存取任何用戶資料。</li>
-			</ul>
+		<footer>
+			<p>最後修改日期：2026 年 01 月 16 日</p>
+			<p>© 2026 SITCON</p>
+		</footer>
+	</main>
+</body>
 
-			<h3>回報方式</h3>
-			<div class="box">
-				<p>請依以下格式寄送至：</p>
-				<p><code>sitcon-dev@googlegroups.com</code></p>
-				<ul>
-					<li>聯絡方式</li>
-					<li>標題</li>
-					<li>敘述</li>
-					<li>重製步驟</li>
-					<li>附件</li>
-					<li>備註</li>
-				</ul>
-			</div>
-
-			<footer>
-				<p>最後修改日期：2026 年 01 月 16 日</p>
-				<p>© 2026 SITCON</p>
-			</footer>
-		</main>
-	</body>
 </html>
