@@ -95,6 +95,72 @@
 				background: rgba(255, 255, 255, 0.03);
 			}
 
+			.table-wrap {
+				overflow-x: auto;
+				-webkit-overflow-scrolling: touch;
+			}
+
+			.hackers td:first-child,
+			.hackers td:nth-child(2) {
+				white-space: nowrap;
+			}
+
+			.stats {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 12px;
+				margin: 1em 0 1.5em;
+			}
+
+			.stat {
+				border: 1px solid var(--border);
+				background: #141414;
+				padding: 10px 16px;
+				min-width: 120px;
+			}
+
+			.stat b {
+				display: block;
+				font-size: 1.6rem;
+				line-height: 1.2;
+				color: var(--accent);
+			}
+
+			.stat span {
+				color: var(--muted);
+				font-size: 0.85rem;
+			}
+
+			.risk {
+				display: inline-block;
+				padding: 0 8px;
+				border-radius: 4px;
+				font-size: 0.8rem;
+				white-space: nowrap;
+				border: 1px solid currentColor;
+			}
+
+			.risk.critical {
+				color: #ff5c5c;
+			}
+
+			.risk.high {
+				color: #ff9f43;
+			}
+
+			.risk.medium {
+				color: #f6d743;
+			}
+
+			.risk.low {
+				color: #5fd38d;
+			}
+
+			.tag {
+				color: var(--muted);
+				font-size: 0.8rem;
+			}
+
 			ul {
 				padding-left: 1.2em;
 			}
@@ -156,24 +222,147 @@
 			</section>
 
 			<h2>Hall of Fame</h2>
-			<table class="hackers">
-				<thead>
-					<tr>
-						<th>日期</th>
-						<th>回報者</th>
-						<th>系統</th>
-						<th>漏洞類型</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>2026/01/21</td>
-						<td>en stev</td>
-						<td>SITCONTIX</td>
-						<td>Open Redirect</td>
-					</tr>
-				</tbody>
-			</table>
+			<div class="stats">
+				<div class="stat">
+					<b>13</b>
+					<span>漏洞回報</span>
+				</div>
+				<div class="stat">
+					<b>7</b>
+					<span>位好駭客</span>
+				</div>
+				<div class="stat">
+					<b>12</b>
+					<span>經 HITCON ZeroDay 通報</span>
+				</div>
+			</div>
+			<p class="muted">ZDID 連結至 HITCON ZeroDay 上的公開通報；尚未公開的漏洞會在修補並到達公開時間後補上細節。</p>
+			<div class="table-wrap">
+				<table class="hackers">
+					<thead>
+						<tr>
+							<th>日期</th>
+							<th>ZDID</th>
+							<th>回報者</th>
+							<th>系統</th>
+							<th>漏洞類型</th>
+							<th>風險</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>2026/10/15</td>
+							<td>
+								ZD-2026-01274
+								<span class="tag">審核中</span>
+							</td>
+							<td>Marco</td>
+							<td class="muted">—</td>
+							<td class="muted">修補後公開</td>
+							<td class="muted">—</td>
+						</tr>
+						<tr>
+							<td>2026/09/15</td>
+							<td>
+								ZD-2026-01167
+								<span class="tag">11/08 公開</span>
+							</td>
+							<td><a href="https://zeroday.hitcon.org/user/curtis992250">taroballz</a></td>
+							<td>SITCONTIX</td>
+							<td>Logic Flaw</td>
+							<td><span class="risk medium">中</span></td>
+						</tr>
+						<tr>
+							<td>2026/08/24</td>
+							<td><a href="https://zeroday.hitcon.org/vulnerability/ZD-2026-01084">ZD-2026-01084</a></td>
+							<td><a href="https://zeroday.hitcon.org/user/ryantseng">0x52 0x79 0x61 0x6e</a></td>
+							<td>SITCONTIX</td>
+							<td>Logic Flaw</td>
+							<td><span class="risk medium">中</span></td>
+						</tr>
+						<tr>
+							<td>2026/08/11</td>
+							<td><a href="https://zeroday.hitcon.org/vulnerability/ZD-2026-01008">ZD-2026-01008</a></td>
+							<td><a href="https://zeroday.hitcon.org/user/rickccs">5yu4n</a></td>
+							<td>SITCONTIX</td>
+							<td>Stored XSS</td>
+							<td><span class="risk critical">嚴重</span></td>
+						</tr>
+						<tr>
+							<td>2026/06/03</td>
+							<td><a href="https://zeroday.hitcon.org/vulnerability/ZD-2026-00810">ZD-2026-00810</a></td>
+							<td><a href="https://zeroday.hitcon.org/user/skyknow">老狼</a></td>
+							<td>SITCONTIX</td>
+							<td>Broken Access Control</td>
+							<td><span class="risk medium">中</span></td>
+						</tr>
+						<tr>
+							<td>2026/06/03</td>
+							<td><a href="https://zeroday.hitcon.org/vulnerability/ZD-2026-00809">ZD-2026-00809</a></td>
+							<td><a href="https://zeroday.hitcon.org/user/skyknow">老狼</a></td>
+							<td>SITCONTIX</td>
+							<td>Broken Access Control</td>
+							<td><span class="risk medium">中</span></td>
+						</tr>
+						<tr>
+							<td>2026/06/03</td>
+							<td><a href="https://zeroday.hitcon.org/vulnerability/ZD-2026-00808">ZD-2026-00808</a></td>
+							<td><a href="https://zeroday.hitcon.org/user/skyknow">老狼</a></td>
+							<td>SITCONTIX</td>
+							<td>Broken Access Control</td>
+							<td><span class="risk medium">中</span></td>
+						</tr>
+						<tr>
+							<td>2026/06/03</td>
+							<td><a href="https://zeroday.hitcon.org/vulnerability/ZD-2026-00807">ZD-2026-00807</a></td>
+							<td><a href="https://zeroday.hitcon.org/user/skyknow">老狼</a></td>
+							<td>SITCONTIX</td>
+							<td>Broken Access Control</td>
+							<td><span class="risk medium">中</span></td>
+						</tr>
+						<tr>
+							<td>2026/06/03</td>
+							<td><a href="https://zeroday.hitcon.org/vulnerability/ZD-2026-00806">ZD-2026-00806</a></td>
+							<td><a href="https://zeroday.hitcon.org/user/skyknow">老狼</a></td>
+							<td>SITCONTIX</td>
+							<td>Broken Access Control</td>
+							<td><span class="risk medium">中</span></td>
+						</tr>
+						<tr>
+							<td>2026/06/03</td>
+							<td><a href="https://zeroday.hitcon.org/vulnerability/ZD-2026-00805">ZD-2026-00805</a></td>
+							<td><a href="https://zeroday.hitcon.org/user/skyknow">老狼</a></td>
+							<td>SITCONTIX</td>
+							<td>Broken Access Control</td>
+							<td><span class="risk medium">中</span></td>
+						</tr>
+						<tr>
+							<td>2026/04/23</td>
+							<td><a href="https://zeroday.hitcon.org/vulnerability/ZD-2026-00578">ZD-2026-00578</a></td>
+							<td><a href="https://zeroday.hitcon.org/user/loyenhsiang">4D-Wing</a></td>
+							<td>SITCONTIX</td>
+							<td>Information Leakage</td>
+							<td><span class="risk medium">中</span></td>
+						</tr>
+						<tr>
+							<td>2026/04/15</td>
+							<td><a href="https://zeroday.hitcon.org/vulnerability/ZD-2026-00544">ZD-2026-00544</a></td>
+							<td><a href="https://zeroday.hitcon.org/user/loyenhsiang">4D-Wing</a></td>
+							<td>SITCONTIX</td>
+							<td>IDOR</td>
+							<td><span class="risk medium">中</span></td>
+						</tr>
+						<tr>
+							<td>2026/01/21</td>
+							<td class="muted">—</td>
+							<td>en stev</td>
+							<td>SITCONTIX</td>
+							<td>Open Redirect</td>
+							<td class="muted">—</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
 
 			<h2>漏洞披露政策</h2>
 			<div class="box">
@@ -220,7 +409,9 @@
 			<h3>回報方式</h3>
 			<div class="box">
 				<p>請依以下格式寄送至：</p>
-				<p><code>sitcon-dev@googlegroups.com</code></p>
+				<p>
+					<a href="mailto:sitcon-dev@googlegroups.com"><code>sitcon-dev@googlegroups.com</code></a>
+				</p>
 				<ul>
 					<li>聯絡方式</li>
 					<li>標題</li>
@@ -232,11 +423,14 @@
 				<p>
 					或是提交至
 					<a href="https://zeroday.hitcon.org/">HITCON ZeroDay</a>
+					（通報流程請見
+					<a href="https://zeroday.hitcon.org/resource/tutorials">教學</a>
+					）
 				</p>
 			</div>
 
 			<footer>
-				<p>最後修改日期：2026 年 01 月 16 日</p>
+				<p>最後修改日期：2026 年 11 月 01 日</p>
 				<p>© 2026 SITCON</p>
 			</footer>
 		</main>
